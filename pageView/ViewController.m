@@ -25,6 +25,7 @@
         _menuScroll = [[MenuScrollView alloc]initWithFrame:CGRectMake(0, 50, MainScreenWdith, 44)];
         _menuScroll.Delegate = self ;//当前的类来遵循代理
     }
+    
     return _menuScroll;
 }
 - (void)viewDidLoad {

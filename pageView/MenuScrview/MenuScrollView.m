@@ -7,7 +7,8 @@
 //
 
 #import "MenuScrollView.h"
-
+#define MainScreenWdith  [UIScreen mainScreen].bounds.size.width
+#define MainScreenHeight  [UIScreen mainScreen].bounds.size.height
 @interface MenuScrollView ()
 
 @property(nonatomic,assign)NSInteger lastBtntag;
@@ -61,15 +62,32 @@
     _lastBtn.transform = CGAffineTransformMakeScale(1, 1);
     btn.selected = YES;
     _lastBtn = btn;
+    
+    
     [UIView animateWithDuration:0.5 animations:^{
          btn.transform = CGAffineTransformMakeScale(1.3, 1.3);
     }];
+//    让标题居中
+    [self setupTitleCenter:btn];
     
     if (_Delegate) {
         [_Delegate respondsToSelector:@selector(menuDidSelectBtnIndex:)];
 //        把选中的index传出去
         [_Delegate menuDidSelectBtnIndex:btn.tag - 100 ];
     }
+}
+
+-(void)setupTitleCenter:(UIButton *)btn{
+    CGPoint offsetPoint = self.contentOffset;
+//    跟中间的距离
+    offsetPoint.x =  btn.center.x -  MainScreenWdith / 2 ;
+    //左边超出处理
+    if (offsetPoint.x<0) offsetPoint.x = 0;
+    CGFloat maxX = self.contentSize.width -MainScreenWdith;
+    //右边超出处理
+    if (offsetPoint.x>maxX) offsetPoint.x = maxX;
+    [self setContentOffset:offsetPoint animated:YES];
+//    _radioBtn = btn;
 }
 
 - (CGFloat)calculateRowWidth:(NSString *)string {
