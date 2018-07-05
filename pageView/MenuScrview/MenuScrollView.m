@@ -13,6 +13,7 @@
 
 @property(nonatomic,assign)NSInteger lastBtntag;
 @property(nonatomic,strong)UIButton* lastBtn;
+@property(nonatomic,strong)UIView * bottomLine;
 @end
 @implementation MenuScrollView
 
@@ -44,6 +45,9 @@
             btn.selected = YES;
             btn.transform = CGAffineTransformMakeScale(1.3, 1.3);
             _lastBtn = btn;
+            self.bottomLine = [[UIView alloc]initWithFrame:CGRectMake(10, 39, Wd-20, 1)];
+            self.bottomLine. backgroundColor = [UIColor redColor];
+            [self addSubview:self.bottomLine];
         }
         [btn addTarget:self action:@selector(selectBtnclick:) forControlEvents:UIControlEventTouchUpInside];
         [btn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
@@ -62,11 +66,14 @@
     _lastBtn.transform = CGAffineTransformMakeScale(1, 1);
     btn.selected = YES;
     _lastBtn = btn;
-    
+
+    [self setupbottomLine:btn];
     
     [UIView animateWithDuration:0.5 animations:^{
          btn.transform = CGAffineTransformMakeScale(1.3, 1.3);
     }];
+    //    移动下面的线
+   
 //    让标题居中
     [self setupTitleCenter:btn];
     
@@ -76,7 +83,13 @@
         [_Delegate menuDidSelectBtnIndex:btn.tag - 100 ];
     }
 }
-
+-(void)setupbottomLine:(UIButton *)btn{
+    
+    [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:5.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.bottomLine.frame = CGRectMake(btn.frame.origin.x + 10, 39, btn.frame.size.width - 20, 1);
+    } completion:nil];
+    
+}
 -(void)setupTitleCenter:(UIButton *)btn{
     CGPoint offsetPoint = self.contentOffset;
 //    跟中间的距离
