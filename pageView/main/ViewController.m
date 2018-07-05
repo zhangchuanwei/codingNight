@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "childViewController.h"
+
 
 #import "MenuScrollView.h"
 #define MainScreenWdith  [UIScreen mainScreen].bounds.size.width

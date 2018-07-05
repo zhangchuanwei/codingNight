@@ -93,10 +93,14 @@
 -(void)setupTitleCenter:(UIButton *)btn{
     CGPoint offsetPoint = self.contentOffset;
 //    跟中间的距离
+    
+   
     offsetPoint.x =  btn.center.x -  MainScreenWdith / 2 ;
+     NSLog(@"btn.center.x==%f ,offsetPoint.x==%f ",btn.center.x,offsetPoint.x);
     //左边超出处理
     if (offsetPoint.x<0) offsetPoint.x = 0;
-    CGFloat maxX = self.contentSize.width -MainScreenWdith;
+    CGFloat maxX = self.contentSize.width - MainScreenWdith;
+    NSLog(@"maxX==%f",maxX);
     //右边超出处理
     if (offsetPoint.x>maxX) offsetPoint.x = maxX;
     [self setContentOffset:offsetPoint animated:YES];
