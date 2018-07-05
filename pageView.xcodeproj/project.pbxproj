@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0162D92520EE580500D609D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0162D92320EE580400D609D1 /* AppDelegate.m */; };
+		0162D92920EE7B8500D609D1 /* PagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0162D92820EE7B8500D609D1 /* PagesViewController.m */; };
 		017CBCF620EC79F200B15269 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017CBCF520EC79F200B15269 /* ViewController.m */; };
 		017CBCF920EC79F200B15269 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 017CBCF720EC79F200B15269 /* Main.storyboard */; };
 		017CBCFB20EC79F600B15269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 017CBCFA20EC79F600B15269 /* Assets.xcassets */; };
@@ -19,6 +20,8 @@
 /* Begin PBXFileReference section */
 		0162D92320EE580400D609D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0162D92420EE580400D609D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0162D92720EE7B8500D609D1 /* PagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagesViewController.h; sourceTree = "<group>"; };
+		0162D92820EE7B8500D609D1 /* PagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagesViewController.m; sourceTree = "<group>"; };
 		017CBCEE20EC79F200B15269 /* pageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		017CBCF420EC79F200B15269 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		017CBCF520EC79F200B15269 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 		017CBCF020EC79F200B15269 /* pageView */ = {
 			isa = PBXGroup;
 			children = (
+				0162D92720EE7B8500D609D1 /* PagesViewController.h */,
+				0162D92820EE7B8500D609D1 /* PagesViewController.m */,
 				0162D92620EE581300D609D1 /* main */,
 				0199DB9620EDFE7000C7959B /* MenuScrview */,
 				017CBCF720EC79F200B15269 /* Main.storyboard */,
@@ -166,6 +171,7 @@
 				0199DB9920EDFF5C00C7959B /* MenuScrollView.m in Sources */,
 				017CBD0120EC79F600B15269 /* main.m in Sources */,
 				0162D92520EE580500D609D1 /* AppDelegate.m in Sources */,
+				0162D92920EE7B8500D609D1 /* PagesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
