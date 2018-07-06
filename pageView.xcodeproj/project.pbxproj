@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		0162D92520EE580500D609D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0162D92320EE580400D609D1 /* AppDelegate.m */; };
-		0162D92920EE7B8500D609D1 /* PagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0162D92820EE7B8500D609D1 /* PagesViewController.m */; };
 		017CBCF620EC79F200B15269 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017CBCF520EC79F200B15269 /* ViewController.m */; };
 		017CBCF920EC79F200B15269 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 017CBCF720EC79F200B15269 /* Main.storyboard */; };
 		017CBCFB20EC79F600B15269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 017CBCFA20EC79F600B15269 /* Assets.xcassets */; };
 		017CBCFE20EC79F600B15269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 017CBCFC20EC79F600B15269 /* LaunchScreen.storyboard */; };
 		017CBD0120EC79F600B15269 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 017CBD0020EC79F600B15269 /* main.m */; };
 		0199DB9920EDFF5C00C7959B /* MenuScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0199DB9820EDFF5C00C7959B /* MenuScrollView.m */; };
+		01B8E63B20EF0936008D8880 /* childTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B8E63A20EF0936008D8880 /* childTableView.m */; };
+		01B8E63E20EF0969008D8880 /* childTableViewB.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B8E63D20EF0969008D8880 /* childTableViewB.m */; };
+		01B8E64120EF0974008D8880 /* childTableViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B8E64020EF0974008D8880 /* childTableViewC.m */; };
+		01B8E64420EF0990008D8880 /* childTableViewD.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B8E64320EF0990008D8880 /* childTableViewD.m */; };
+		01B8E64720EF1706008D8880 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B8E64620EF1706008D8880 /* BaseTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0162D92320EE580400D609D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0162D92420EE580400D609D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0162D92720EE7B8500D609D1 /* PagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagesViewController.h; sourceTree = "<group>"; };
-		0162D92820EE7B8500D609D1 /* PagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagesViewController.m; sourceTree = "<group>"; };
 		017CBCEE20EC79F200B15269 /* pageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		017CBCF420EC79F200B15269 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		017CBCF520EC79F200B15269 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -32,6 +34,16 @@
 		017CBD0020EC79F600B15269 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0199DB9720EDFF5C00C7959B /* MenuScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuScrollView.h; sourceTree = "<group>"; };
 		0199DB9820EDFF5C00C7959B /* MenuScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuScrollView.m; sourceTree = "<group>"; };
+		01B8E63920EF0936008D8880 /* childTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = childTableView.h; sourceTree = "<group>"; };
+		01B8E63A20EF0936008D8880 /* childTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = childTableView.m; sourceTree = "<group>"; };
+		01B8E63C20EF0969008D8880 /* childTableViewB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = childTableViewB.h; sourceTree = "<group>"; };
+		01B8E63D20EF0969008D8880 /* childTableViewB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = childTableViewB.m; sourceTree = "<group>"; };
+		01B8E63F20EF0974008D8880 /* childTableViewC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = childTableViewC.h; sourceTree = "<group>"; };
+		01B8E64020EF0974008D8880 /* childTableViewC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = childTableViewC.m; sourceTree = "<group>"; };
+		01B8E64220EF0990008D8880 /* childTableViewD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = childTableViewD.h; sourceTree = "<group>"; };
+		01B8E64320EF0990008D8880 /* childTableViewD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = childTableViewD.m; sourceTree = "<group>"; };
+		01B8E64520EF1706008D8880 /* BaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		01B8E64620EF1706008D8880 /* BaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +87,7 @@
 		017CBCF020EC79F200B15269 /* pageView */ = {
 			isa = PBXGroup;
 			children = (
-				0162D92720EE7B8500D609D1 /* PagesViewController.h */,
-				0162D92820EE7B8500D609D1 /* PagesViewController.m */,
+				01B8E63820EF0913008D8880 /* New Group */,
 				0162D92620EE581300D609D1 /* main */,
 				0199DB9620EDFE7000C7959B /* MenuScrview */,
 				017CBCF720EC79F200B15269 /* Main.storyboard */,
@@ -84,6 +95,8 @@
 				017CBCFC20EC79F600B15269 /* LaunchScreen.storyboard */,
 				017CBCFF20EC79F600B15269 /* Info.plist */,
 				017CBD0020EC79F600B15269 /* main.m */,
+				01B8E64520EF1706008D8880 /* BaseTableViewController.h */,
+				01B8E64620EF1706008D8880 /* BaseTableViewController.m */,
 			);
 			path = pageView;
 			sourceTree = "<group>";
@@ -95,6 +108,21 @@
 				0199DB9820EDFF5C00C7959B /* MenuScrollView.m */,
 			);
 			path = MenuScrview;
+			sourceTree = "<group>";
+		};
+		01B8E63820EF0913008D8880 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				01B8E63920EF0936008D8880 /* childTableView.h */,
+				01B8E63A20EF0936008D8880 /* childTableView.m */,
+				01B8E63C20EF0969008D8880 /* childTableViewB.h */,
+				01B8E63D20EF0969008D8880 /* childTableViewB.m */,
+				01B8E63F20EF0974008D8880 /* childTableViewC.h */,
+				01B8E64020EF0974008D8880 /* childTableViewC.m */,
+				01B8E64220EF0990008D8880 /* childTableViewD.h */,
+				01B8E64320EF0990008D8880 /* childTableViewD.m */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,10 +196,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				017CBCF620EC79F200B15269 /* ViewController.m in Sources */,
+				01B8E64720EF1706008D8880 /* BaseTableViewController.m in Sources */,
 				0199DB9920EDFF5C00C7959B /* MenuScrollView.m in Sources */,
 				017CBD0120EC79F600B15269 /* main.m in Sources */,
 				0162D92520EE580500D609D1 /* AppDelegate.m in Sources */,
-				0162D92920EE7B8500D609D1 /* PagesViewController.m in Sources */,
+				01B8E63B20EF0936008D8880 /* childTableView.m in Sources */,
+				01B8E64420EF0990008D8880 /* childTableViewD.m in Sources */,
+				01B8E63E20EF0969008D8880 /* childTableViewB.m in Sources */,
+				01B8E64120EF0974008D8880 /* childTableViewC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

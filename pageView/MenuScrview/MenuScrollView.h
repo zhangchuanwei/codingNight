@@ -13,8 +13,10 @@
 -(void)menuDidSelectBtnIndex:(NSInteger)index;
 
 @end
-@interface MenuScrollView : UIScrollView
 
+
+@interface MenuScrollView : UIScrollView
+-(void)selectBtnWithindex:(NSInteger)index;
 @property(nonatomic,strong)NSArray * titleArray ;
 
 @property(nonatomic,weak)id<menuScrollviewDelegate> Delegate;

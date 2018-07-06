@@ -83,6 +83,14 @@
         [_Delegate menuDidSelectBtnIndex:btn.tag - 100 ];
     }
 }
+
+-(void)selectBtnWithindex:(NSInteger)index{
+    
+    UIButton *btn = [self viewWithTag:index + 100];
+    
+    [self selectBtnclick:btn];
+}
+
 -(void)setupbottomLine:(UIButton *)btn{
     
     [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:5.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{

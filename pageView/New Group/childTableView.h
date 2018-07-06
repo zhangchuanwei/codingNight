@@ -1,5 +1,5 @@
 //
-//  PagesViewController.h
+//  childTableView.h
 //  pageView
 //
 //  Created by 张传伟 on 2018/7/6.
@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface PagesViewController : UIViewController
-
+#import "BaseTableViewController.h"
+@interface childTableView : BaseTableViewController
 @end
