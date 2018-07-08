@@ -17,7 +17,7 @@
 {
     [super viewWillAppear:animated];
     
-    NSLog(@"%@,%@",[self class],NSStringFromSelector(_cmd));
+    NSLog(@"%@,%s",[self class],__func__);
     
 }
 - (void)viewDidLoad {
