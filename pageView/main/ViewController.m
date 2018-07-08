@@ -95,6 +95,21 @@
 - (void)menuDidSelectBtnIndex:(NSInteger)index
 {
     NSLog(@"当前选中的事第几个按钮%ld",index);
+    
+//    [_pageView s]
+    if (index < self.dataArray.count ) {
+        
+        if (index < _currentIndex) { //向左滑
+            [_pageView setViewControllers:@[self.dataArray[index]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+            
+        }else
+        { // 向右滑
+            
+            [_pageView setViewControllers:@[self.dataArray[index]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+        }
+        _currentIndex = index ;
+    }
+  
 }
 
     //pageview 的代理方法

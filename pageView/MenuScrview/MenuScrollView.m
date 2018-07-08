@@ -59,6 +59,8 @@
     }
     
 }
+
+
 -(void)selectBtnclick:(UIButton *)btn
 {
     
@@ -83,7 +85,7 @@
         [_Delegate menuDidSelectBtnIndex:btn.tag - 100 ];
     }
 }
-
+//外面穿进来的index 告诉menu要选中那个按钮
 -(void)selectBtnWithindex:(NSInteger)index{
     
     UIButton *btn = [self viewWithTag:index + 100];
