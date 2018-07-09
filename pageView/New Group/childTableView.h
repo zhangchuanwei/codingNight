@@ -8,5 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseTableViewController.h"
-@interface childTableView : BaseTableViewController
+@interface childTableView : UITableViewController
+@property(nonatomic,assign)NSInteger index;
 @end

@@ -14,11 +14,14 @@
 		017CBCFE20EC79F600B15269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 017CBCFC20EC79F600B15269 /* LaunchScreen.storyboard */; };
 		017CBD0120EC79F600B15269 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 017CBD0020EC79F600B15269 /* main.m */; };
 		0199DB9920EDFF5C00C7959B /* MenuScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0199DB9820EDFF5C00C7959B /* MenuScrollView.m */; };
+		01B22C4220F3402900A691C5 /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B22C4120F3402900A691C5 /* HttpTool.m */; };
+		01B22C4720F3493300A691C5 /* titlesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B22C4620F3493300A691C5 /* titlesModel.m */; };
+		01B22C4A20F3558E00A691C5 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B22C4920F3558E00A691C5 /* NewsModel.m */; };
+		01B22C4E20F3580700A691C5 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B22C4C20F3580700A691C5 /* NewsTableViewCell.m */; };
+		01B22C4F20F3580700A691C5 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B22C4D20F3580700A691C5 /* NewsTableViewCell.xib */; };
 		01B8E63B20EF0936008D8880 /* childTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B8E63A20EF0936008D8880 /* childTableView.m */; };
-		01B8E63E20EF0969008D8880 /* childTableViewB.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B8E63D20EF0969008D8880 /* childTableViewB.m */; };
-		01B8E64120EF0974008D8880 /* childTableViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B8E64020EF0974008D8880 /* childTableViewC.m */; };
-		01B8E64420EF0990008D8880 /* childTableViewD.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B8E64320EF0990008D8880 /* childTableViewD.m */; };
 		01B8E64720EF1706008D8880 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B8E64620EF1706008D8880 /* BaseTableViewController.m */; };
+		27C2E3944BB96633D0AB66C4 /* libPods-pageView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D060564A059AEC0E71C8C0 /* libPods-pageView.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,16 +37,23 @@
 		017CBD0020EC79F600B15269 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0199DB9720EDFF5C00C7959B /* MenuScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuScrollView.h; sourceTree = "<group>"; };
 		0199DB9820EDFF5C00C7959B /* MenuScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuScrollView.m; sourceTree = "<group>"; };
+		01B22C4020F3402900A691C5 /* HttpTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
+		01B22C4120F3402900A691C5 /* HttpTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
+		01B22C4320F3471700A691C5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		01B22C4520F3493300A691C5 /* titlesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = titlesModel.h; sourceTree = "<group>"; };
+		01B22C4620F3493300A691C5 /* titlesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = titlesModel.m; sourceTree = "<group>"; };
+		01B22C4820F3558E00A691C5 /* NewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
+		01B22C4920F3558E00A691C5 /* NewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
+		01B22C4B20F3580700A691C5 /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		01B22C4C20F3580700A691C5 /* NewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
+		01B22C4D20F3580700A691C5 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		01B8E63920EF0936008D8880 /* childTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = childTableView.h; sourceTree = "<group>"; };
 		01B8E63A20EF0936008D8880 /* childTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = childTableView.m; sourceTree = "<group>"; };
-		01B8E63C20EF0969008D8880 /* childTableViewB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = childTableViewB.h; sourceTree = "<group>"; };
-		01B8E63D20EF0969008D8880 /* childTableViewB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = childTableViewB.m; sourceTree = "<group>"; };
-		01B8E63F20EF0974008D8880 /* childTableViewC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = childTableViewC.h; sourceTree = "<group>"; };
-		01B8E64020EF0974008D8880 /* childTableViewC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = childTableViewC.m; sourceTree = "<group>"; };
-		01B8E64220EF0990008D8880 /* childTableViewD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = childTableViewD.h; sourceTree = "<group>"; };
-		01B8E64320EF0990008D8880 /* childTableViewD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = childTableViewD.m; sourceTree = "<group>"; };
 		01B8E64520EF1706008D8880 /* BaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		01B8E64620EF1706008D8880 /* BaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		01EE060A239EDE78057F19F7 /* Pods-pageView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pageView.release.xcconfig"; path = "Pods/Target Support Files/Pods-pageView/Pods-pageView.release.xcconfig"; sourceTree = "<group>"; };
+		35D060564A059AEC0E71C8C0 /* libPods-pageView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pageView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ED34C39EA1B1EB0EDDB1A0C /* Pods-pageView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pageView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pageView/Pods-pageView.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27C2E3944BB96633D0AB66C4 /* libPods-pageView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +71,7 @@
 		0162D92620EE581300D609D1 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				01B22C4420F3492500A691C5 /* titlesModel */,
 				0162D92420EE580400D609D1 /* AppDelegate.h */,
 				0162D92320EE580400D609D1 /* AppDelegate.m */,
 				017CBCF420EC79F200B15269 /* ViewController.h */,
@@ -73,6 +85,8 @@
 			children = (
 				017CBCF020EC79F200B15269 /* pageView */,
 				017CBCEF20EC79F200B15269 /* Products */,
+				B4F5DF600566969EB7F5AE34 /* Pods */,
+				2DE2052F3A5617593813ACA7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +101,7 @@
 		017CBCF020EC79F200B15269 /* pageView */ = {
 			isa = PBXGroup;
 			children = (
+				01B22C3F20F3400600A691C5 /* tool */,
 				01B8E63820EF0913008D8880 /* New Group */,
 				0162D92620EE581300D609D1 /* main */,
 				0199DB9620EDFE7000C7959B /* MenuScrview */,
@@ -110,19 +125,54 @@
 			path = MenuScrview;
 			sourceTree = "<group>";
 		};
+		01B22C3F20F3400600A691C5 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				01B22C4020F3402900A691C5 /* HttpTool.h */,
+				01B22C4120F3402900A691C5 /* HttpTool.m */,
+				01B22C4320F3471700A691C5 /* PrefixHeader.pch */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
+		01B22C4420F3492500A691C5 /* titlesModel */ = {
+			isa = PBXGroup;
+			children = (
+				01B22C4520F3493300A691C5 /* titlesModel.h */,
+				01B22C4620F3493300A691C5 /* titlesModel.m */,
+			);
+			path = titlesModel;
+			sourceTree = "<group>";
+		};
 		01B8E63820EF0913008D8880 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
 				01B8E63920EF0936008D8880 /* childTableView.h */,
 				01B8E63A20EF0936008D8880 /* childTableView.m */,
-				01B8E63C20EF0969008D8880 /* childTableViewB.h */,
-				01B8E63D20EF0969008D8880 /* childTableViewB.m */,
-				01B8E63F20EF0974008D8880 /* childTableViewC.h */,
-				01B8E64020EF0974008D8880 /* childTableViewC.m */,
-				01B8E64220EF0990008D8880 /* childTableViewD.h */,
-				01B8E64320EF0990008D8880 /* childTableViewD.m */,
+				01B22C4820F3558E00A691C5 /* NewsModel.h */,
+				01B22C4920F3558E00A691C5 /* NewsModel.m */,
+				01B22C4B20F3580700A691C5 /* NewsTableViewCell.h */,
+				01B22C4C20F3580700A691C5 /* NewsTableViewCell.m */,
+				01B22C4D20F3580700A691C5 /* NewsTableViewCell.xib */,
 			);
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		2DE2052F3A5617593813ACA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35D060564A059AEC0E71C8C0 /* libPods-pageView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4F5DF600566969EB7F5AE34 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4ED34C39EA1B1EB0EDDB1A0C /* Pods-pageView.debug.xcconfig */,
+				01EE060A239EDE78057F19F7 /* Pods-pageView.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,9 +182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 017CBD0420EC79F600B15269 /* Build configuration list for PBXNativeTarget "pageView" */;
 			buildPhases = (
+				A4CCE5402859CA0904D5584A /* [CP] Check Pods Manifest.lock */,
 				017CBCEA20EC79F200B15269 /* Sources */,
 				017CBCEB20EC79F200B15269 /* Frameworks */,
 				017CBCEC20EC79F200B15269 /* Resources */,
+				D5BD0AA2D0481357A9DF0129 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,11 +236,51 @@
 			files = (
 				017CBCFE20EC79F600B15269 /* LaunchScreen.storyboard in Resources */,
 				017CBCFB20EC79F600B15269 /* Assets.xcassets in Resources */,
+				01B22C4F20F3580700A691C5 /* NewsTableViewCell.xib in Resources */,
 				017CBCF920EC79F200B15269 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A4CCE5402859CA0904D5584A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pageView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5BD0AA2D0481357A9DF0129 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-pageView/Pods-pageView-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pageView/Pods-pageView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		017CBCEA20EC79F200B15269 /* Sources */ = {
@@ -199,11 +291,12 @@
 				01B8E64720EF1706008D8880 /* BaseTableViewController.m in Sources */,
 				0199DB9920EDFF5C00C7959B /* MenuScrollView.m in Sources */,
 				017CBD0120EC79F600B15269 /* main.m in Sources */,
+				01B22C4A20F3558E00A691C5 /* NewsModel.m in Sources */,
 				0162D92520EE580500D609D1 /* AppDelegate.m in Sources */,
+				01B22C4E20F3580700A691C5 /* NewsTableViewCell.m in Sources */,
 				01B8E63B20EF0936008D8880 /* childTableView.m in Sources */,
-				01B8E64420EF0990008D8880 /* childTableViewD.m in Sources */,
-				01B8E63E20EF0969008D8880 /* childTableViewB.m in Sources */,
-				01B8E64120EF0974008D8880 /* childTableViewC.m in Sources */,
+				01B22C4720F3493300A691C5 /* titlesModel.m in Sources */,
+				01B22C4220F3402900A691C5 /* HttpTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,10 +434,13 @@
 		};
 		017CBD0520EC79F600B15269 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4ED34C39EA1B1EB0EDDB1A0C /* Pods-pageView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YPXF6AKNK4;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = pageView/tool/PrefixHeader.pch;
 				INFOPLIST_FILE = pageView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -358,10 +454,13 @@
 		};
 		017CBD0620EC79F600B15269 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01EE060A239EDE78057F19F7 /* Pods-pageView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YPXF6AKNK4;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = pageView/tool/PrefixHeader.pch;
 				INFOPLIST_FILE = pageView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

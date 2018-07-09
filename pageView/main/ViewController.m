@@ -7,32 +7,35 @@
 //
 
 #import "ViewController.h"
-
-
 #import "MenuScrollView.h"
-
 #import "childTableView.h"
-#import "childTableViewB.h"
-#import "childTableViewC.h"
-#import "childTableViewD.h"
-
+#import "titlesModel.h"
 #define MainScreenWdith  [UIScreen mainScreen].bounds.size.width
 #define MainScreenHeight  [UIScreen mainScreen].bounds.size.height
-@interface ViewController ()<menuScrollviewDelegate,UIPageViewControllerDelegate,UIPageViewControllerDataSource>
+@interface ViewController ()<menuScrollviewDelegate,UIPageViewControllerDelegate,UIPageViewControllerDataSource,UIScrollViewDelegate>
 {
     NSInteger _currentIndex;
     
     UIViewController * _pengdingViewController;
 }
+
+@property(nonatomic,strong)UIScrollView *bgScroll;
 @property(nonatomic,strong)MenuScrollView * menuScroll;
 @property(nonatomic,strong)UIPageViewController *pageView;
-    @property(nonatomic,strong)NSMutableArray *dataArray;
-
+@property(nonatomic,strong)NSMutableArray *dataArray;
+@property(nonatomic,strong)NSMutableArray *titles;
 @end
 
 @implementation ViewController
 
-
+-(UIScrollView *)bgScroll
+{
+    if (_bgScroll == nil) {
+        _bgScroll = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, MainScreenWdith, MainScreenHeight)];
+        _bgScroll.delegate = self;
+    }
+    return  _bgScroll;
+}
 - (MenuScrollView *)menuScroll
 {
     if (_menuScroll == nil) {
@@ -60,25 +63,52 @@
         
         _dataArray = [NSMutableArray arrayWithCapacity:0];
         
-        childTableView *vc1 = [[childTableView alloc]init];
-        childTableViewB *vc2 = [[childTableViewB alloc]init];
-        childTableViewC *vc3 = [[childTableViewC alloc]init];
-        childTableViewD *vc4 = [[childTableViewD alloc]init];
-        
-        [_dataArray addObject:vc1];
-        [_dataArray addObject:vc2];
-        [_dataArray addObject:vc3];
-        [_dataArray addObject:vc4];
-        
-        
+        for (int index = 0; index < self.titles.count; index ++) {
+            childTableView *vc = [[childTableView alloc]init];
+            vc.index = index ;
+            [_dataArray addObject:vc];
+        }
     }
     return _dataArray;
 }
+
+-(NSMutableArray *)titles
+{
+    if (_titles == nil) {
+        
+        _titles = [NSMutableArray arrayWithCapacity:0];
+       
+    }
+    return _titles ;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray *titles =@[@"科技",@"生活类",@"军事",@"农业",@"养殖",@"It",@"影视",@"动漫",@"历史科技"];
-    self.menuScroll.titleArray = titles;
-    [self.view addSubview:self.menuScroll];
+    
+   
+    [self.view addSubview:self.bgScroll];
+    NSString *url =[NSString stringWithFormat:@"%@headline/tag",HOME_URL];
+    [HttpTool getWithURL:url params:nil success:^(id json) {
+        NSLog(@"json==%@",json);
+        
+        for (NSDictionary  * dic in json[@"content"]) {
+            
+            
+            titlesModel *model = [[titlesModel alloc]init];
+            [model setValuesForKeysWithDictionary:dic];
+            [self.titles addObject:model];
+        }
+        
+        [self setUpView];
+        
+    } failure:^(NSError *error, NSInteger code) {
+        
+    }] ;
+
+}
+-(void)setUpView
+{
+    self.menuScroll.titleArray = self.titles;
+    [self.bgScroll addSubview:self.menuScroll];
     
     self.pageView.view.frame = CGRectMake(0, CGRectGetMaxY(self.menuScroll.frame), MainScreenWdith, MainScreenHeight - CGRectGetMaxY(self.menuScroll.frame));
     
@@ -86,12 +116,12 @@
     [_pageView setViewControllers:@[self.dataArray[0]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
     //设置是否双面展示
     _pageView.doubleSided = NO;
-
+    
     _pageView.view.backgroundColor = [UIColor redColor];
-    [self.view addSubview:_pageView.view];
-
+    [self.bgScroll addSubview:_pageView.view];
     
 }
+
 - (void)menuDidSelectBtnIndex:(NSInteger)index
 {
     NSLog(@"当前选中的事第几个按钮%ld",index);
