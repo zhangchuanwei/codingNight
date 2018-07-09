@@ -36,9 +36,20 @@
     [self.tableView registerNib:[UINib nibWithNibName:name bundle:nil] forCellReuseIdentifier:name];
     self.tableView.tableFooterView =[UIView new];
     typeof(self) weakself = self;
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+       
+        self->_page = 0;
+        
+        [weakself.dataArray removeAllObjects];
+        
+        [weakself getdata];
+    }];
+    
     MJRefreshAutoNormalFooter *foot =[MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [weakself getdata];
     }];
+    
+    
     self.tableView.mj_footer = foot;
     [self getdata];
     
