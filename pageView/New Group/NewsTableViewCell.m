@@ -23,7 +23,17 @@
         self.typeLab.text = dic[@"name"];
     }
     NSURL * url =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGEURL,model.banner]];
-    [self.rightImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeHoldImage"]];
+    
+      UIImage *originalImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:[NSString stringWithFormat:@"%@%@",IMAGEURL,model.banner]];
+    if (originalImage) {
+        self.rightImageView.image = originalImage;
+    }else
+    {
+//         [self.rightImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeHoldImage"]];
+        
+        [self.rightImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeHoldImage"] options:SDWebImageRetryFailed];
+    }
+   
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

@@ -16,6 +16,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+//    监听网络状态
+    AFNetworkReachabilityManager *mng = [AFNetworkReachabilityManager sharedManager];
+    [mng startMonitoring];
+    if (mng.isReachableViaWiFi) {
+        NSLog(@"wifi环境");
+    }else
+    {
+        NSLog(@"其他环境");
+    }
+    
+    
     // Override point for customization after application launch.
     return YES;
 }
