@@ -45,6 +45,8 @@
         [weakself getdata];
     }];
     
+    self.tableView.mj_header = header;
+    
     MJRefreshAutoNormalFooter *foot =[MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [weakself getdata];
     }];
@@ -70,6 +72,7 @@
             
             [self.dataArray addObject:model];
         }
+        [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         [self.tableView reloadData];
     } failure:^(NSError *error, NSInteger code) {

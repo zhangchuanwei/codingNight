@@ -7,7 +7,6 @@
 //
 
 #import "NewsTableViewCell.h"
-//#import <SDWebImageManager.h>
 @implementation NewsTableViewCell
 
 - (void)awakeFromNib {
@@ -24,13 +23,7 @@
         self.typeLab.text = dic[@"name"];
     }
     NSURL * url =[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGEURL,model.banner]];
-    [self.rightImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@""] options:SDWebImageProgressiveDownload progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
-        NSLog(@"receivedSize==%ld,expectedSize===%ld,targetURL==%@",receivedSize,expectedSize,targetURL);
-        
-    } completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        
-        NSLog(@"image==%@,error==%@,cacheType==%ld,imageURL=%@",image,error,(long)cacheType,imageURL);
-    }];
+    [self.rightImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeHoldImage"]];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
