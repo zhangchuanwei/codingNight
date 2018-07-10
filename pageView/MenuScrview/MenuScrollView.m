@@ -37,7 +37,6 @@
     for (titlesModel *model in titleArray) {
         NSString * title = model.name;
         CGFloat Wd = [self calculateRowWidth:title] + 20;
-        
         UIButton *btn = [[UIButton alloc]init];
         btn.titleLabel.font = [UIFont systemFontOfSize:15];
         btn.frame = CGRectMake(totolWd, 0, Wd, self.frame.size.height);

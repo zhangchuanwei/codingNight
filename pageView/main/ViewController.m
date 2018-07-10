@@ -10,22 +10,15 @@
 #import "MenuScrollView.h"
 #import "childTableView.h"
 #import "titlesModel.h"
-#define MainScreenWdith  [UIScreen mainScreen].bounds.size.width
-#define MainScreenHeight  [UIScreen mainScreen].bounds.size.height
-@interface ViewController ()<menuScrollviewDelegate,UIPageViewControllerDelegate,UIPageViewControllerDataSource,UIScrollViewDelegate>
-{
-    NSInteger _currentIndex;
-    
-    UIViewController * _pengdingViewController;
-}
+#import "PagesView.h"
+@interface ViewController ()<menuScrollviewDelegate,UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,PagesViewDelegate>
 
 @property(nonatomic,strong)UIScrollView *bgScroll;
 @property(nonatomic,strong)MenuScrollView * menuScroll;
-@property(nonatomic,strong)UIPageViewController *pageView;
-@property(nonatomic,strong)NSMutableArray *dataArray;
+@property(nonatomic,strong)PagesView *pagesView;
 @property(nonatomic,strong)NSMutableArray *titles;
+@property(nonatomic,strong)UITableView *tabView;
 @end
-
 @implementation ViewController
 
 -(UIScrollView *)bgScroll
@@ -36,90 +29,62 @@
     }
     return  _bgScroll;
 }
+
+-(PagesView *)pagesView
+{
+    if (_pagesView == nil) {
+        _pagesView = [[PagesView alloc]initWithFrame:CGRectMake(0, 0, MainScreenWdith, MainScreenHeight - 44)];
+        _pagesView.PagesDelsgate = self;
+    }
+    return _pagesView;
+}
 - (MenuScrollView *)menuScroll
 {
     if (_menuScroll == nil) {
         _menuScroll = [[MenuScrollView alloc]initWithFrame:CGRectMake(0, 50, MainScreenWdith, 44)];
         _menuScroll.Delegate = self ;//当前的类来遵循代理
     }
-    
     return _menuScroll;
 }
     
--(UIPageViewController *)pageView{
-    
-    if (_pageView == nil){
-        
-        _pageView = [[UIPageViewController alloc]initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:0 options:nil];
-        _pageView.dataSource = self;
-        _pageView.delegate = self;
-    }
-    return _pageView;
-    
-}
--(NSMutableArray *)dataArray
-{
-    if (_dataArray == nil) {
-        
-        _dataArray = [NSMutableArray arrayWithCapacity:0];
-        
-        for (int index = 0; index < self.titles.count; index ++) {
-            childTableView *vc = [[childTableView alloc]init];
-            vc.index = index ;
-            [_dataArray addObject:vc];
-        }
-    }
-    return _dataArray;
-}
 
 -(NSMutableArray *)titles
 {
     if (_titles == nil) {
-        
         _titles = [NSMutableArray arrayWithCapacity:0];
-       
     }
     return _titles ;
 }
+
+
+-(UITableView *)tabView
+{
+    if (_tabView == nil) {
+        _tabView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, MainScreenWdith, MainScreenHeight) style:UITableViewStylePlain];
+        _tabView.dataSource = self;
+        _tabView.delegate = self;
+    }
+    return _tabView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   
-    [self.view addSubview:self.bgScroll];
+    self.tabView.translatesAutoresizingMaskIntoConstraints = NO;
     NSString *url =[NSString stringWithFormat:@"%@headline/tag",HOME_URL];
     [HttpTool getWithURL:url params:nil success:^(id json) {
-        NSLog(@"json==%@",json);
-        
         for (NSDictionary  * dic in json[@"content"]) {
-            
-            
             titlesModel *model = [[titlesModel alloc]init];
             [model setValuesForKeysWithDictionary:dic];
             [self.titles addObject:model];
         }
+        self.menuScroll.titleArray = self.titles;
         
-        [self setUpView];
-        
+        [self.view addSubview:self.tabView];
     } failure:^(NSError *error, NSInteger code) {
         
     }] ;
 
-}
--(void)setUpView
-{
-    self.menuScroll.titleArray = self.titles;
-    [self.bgScroll addSubview:self.menuScroll];
-    
-    self.pageView.view.frame = CGRectMake(0, CGRectGetMaxY(self.menuScroll.frame), MainScreenWdith, MainScreenHeight - CGRectGetMaxY(self.menuScroll.frame));
-    
-    //设置初始界面
-    [_pageView setViewControllers:@[self.dataArray[0]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
-    //设置是否双面展示
-    _pageView.doubleSided = NO;
-    
-    _pageView.view.backgroundColor = [UIColor redColor];
-    [self.bgScroll addSubview:_pageView.view];
-    
 }
 
 - (void)menuDidSelectBtnIndex:(NSInteger)index
@@ -127,65 +92,105 @@
     NSLog(@"当前选中的事第几个按钮%ld",index);
     
 //    [_pageView s]
-    if (index < self.dataArray.count ) {
-        
-        if (index < _currentIndex) { //向左滑
-            [_pageView setViewControllers:@[self.dataArray[index]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
-            
-        }else
-        { // 向右滑
-            
-            [_pageView setViewControllers:@[self.dataArray[index]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+
+    [self.pagesView setUpPagesWithIndex:index];
+}
+
+ //pageview 的代理方法
+-(void)PagesViewScrollToIndex:(NSInteger)index
+{
+    [self.menuScroll selectBtnWithindex:index];
+}
+-(void)PagesScrollOffset:(CGFloat)offSetY
+{
+    CGPoint taboffSet = self.tabView.contentOffset;
+    NSLog(@"taboffSet.y ==%f",taboffSet.y );
+    taboffSet.y = offSetY ;
+
+    if (offSetY<self.tabView.contentSize.height - CGRectGetHeight(self.pagesView.frame)-44) {
+        [self.tabView setContentOffset:taboffSet];
+    }
+    
+}
+
+
+
+#pragma mark - UITabViewdeledate
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 3;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 2) return 1;
+    
+    return 2;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 2) {
+        return self.menuScroll;
+    }else
+    {
+        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, MainScreenWdith, 10)];
+        view.backgroundColor = [UIColor redColor];
+        return view;
+    }
+    
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 2) {
+        return 44;
+    }else
+    {
+        return 10;
+    }
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 2) {
+        return MainScreenHeight;
+    }else
+    {
+        return 44;
+    }
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (indexPath.section == 2) {
+        UITableViewCell * cell2 = [tableView dequeueReusableCellWithIdentifier:@"cell2"];
+        if (cell2 == nil) {
+            cell2 = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell2"];
+            self.pagesView.tag = 10;
+            [cell2.contentView addSubview:self.pagesView];
         }
-        _currentIndex = index ;
-    }
-  
-}
-
-    //pageview 的代理方法
-    - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{
         
-        NSInteger beforeIndex = _currentIndex - 1;
-        //返回nil时禁止继续滑动
-        if (beforeIndex < 0) return nil;
+        self.pagesView.pages = self.titles;
         
-        return self.dataArray[beforeIndex];
+        
+        return cell2;
+    }else
+    {
+        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        }
 
+        return cell;
     }
-    //翻页控制器进行向后翻页动作 这个数据源方法返回的视图控制器为要显示视图的视图控制器
-- (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
     
-    NSInteger afterIndex = _currentIndex + 1;
-    if (afterIndex > self.dataArray.count - 1) return nil;
     
-    return self.dataArray[afterIndex];
-
-}
-#pragma mark - UIPageViewControllerDelegate
-//跳转动画开始时触发，利用该方法可以定位将要跳转的界面
-- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers {
-    //pendingViewControllers虽然是一个数组，但经测试证明该数组始终只包含一个对象
-    _pengdingViewController = pendingViewControllers.lastObject;
-}
-//跳转动画完成时触发，配合上面的代理方法可以定位到具体的跳转界面，此方法有利于定位具体的界面位置（childViewControllersArray），
-- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
-    //previousViewControllers虽然是一个数组，但经测试证明该数组始终只包含一个对象
-    if (completed) {
-        
-        [self.dataArray enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            
-            if (_pengdingViewController == obj) {
-                
-                _currentIndex = idx;
-                
-                
-                [self.menuScroll selectBtnWithindex:idx];
-                
-            }
-        }];
-
-    }
 }
 
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    NSLog(@"scrollView==%f",scrollView.contentSize.height);
+     NSLog(@"contentoffSet==%f",scrollView.contentOffset.y);
+}
 
 @end

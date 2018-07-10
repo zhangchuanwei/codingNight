@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "MyNavgationController.h"
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -26,6 +27,18 @@
     {
         NSLog(@"其他环境");
     }
+    
+    self.window = [[UIWindow alloc]initWithFrame:CGRectMake(0, 0, MainScreenWdith, MainScreenHeight)];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    ViewController *vc = [[ViewController alloc]init];
+    MyNavgationController *nav = [[MyNavgationController alloc]initWithRootViewController:vc];
+    
+    self.window.rootViewController = nav;
+    
+    
+    [self.window makeKeyAndVisible];
+    
     
     
     // Override point for customization after application launch.

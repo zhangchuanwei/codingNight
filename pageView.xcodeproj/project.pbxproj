@@ -13,6 +13,8 @@
 		017CBCFB20EC79F600B15269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 017CBCFA20EC79F600B15269 /* Assets.xcassets */; };
 		017CBCFE20EC79F600B15269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 017CBCFC20EC79F600B15269 /* LaunchScreen.storyboard */; };
 		017CBD0120EC79F600B15269 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 017CBD0020EC79F600B15269 /* main.m */; };
+		0182D5FB20F44D6E0031490C /* PagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0182D5FA20F44D6E0031490C /* PagesView.m */; };
+		0182D60020F4627F0031490C /* MyNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0182D5FF20F4627F0031490C /* MyNavgationController.m */; };
 		0199DB9920EDFF5C00C7959B /* MenuScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0199DB9820EDFF5C00C7959B /* MenuScrollView.m */; };
 		01B22C4220F3402900A691C5 /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B22C4120F3402900A691C5 /* HttpTool.m */; };
 		01B22C4720F3493300A691C5 /* titlesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B22C4620F3493300A691C5 /* titlesModel.m */; };
@@ -35,6 +37,10 @@
 		017CBCFD20EC79F600B15269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		017CBCFF20EC79F600B15269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		017CBD0020EC79F600B15269 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0182D5F920F44D6E0031490C /* PagesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagesView.h; sourceTree = "<group>"; };
+		0182D5FA20F44D6E0031490C /* PagesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagesView.m; sourceTree = "<group>"; };
+		0182D5FE20F4627F0031490C /* MyNavgationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyNavgationController.h; sourceTree = "<group>"; };
+		0182D5FF20F4627F0031490C /* MyNavgationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyNavgationController.m; sourceTree = "<group>"; };
 		0199DB9720EDFF5C00C7959B /* MenuScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuScrollView.h; sourceTree = "<group>"; };
 		0199DB9820EDFF5C00C7959B /* MenuScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuScrollView.m; sourceTree = "<group>"; };
 		01B22C4020F3402900A691C5 /* HttpTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
@@ -71,6 +77,8 @@
 		0162D92620EE581300D609D1 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				0182D5FC20F4625A0031490C /* nav */,
+				0182D5FD20F4625A0031490C /* TabBar */,
 				01B22C4420F3492500A691C5 /* titlesModel */,
 				0162D92420EE580400D609D1 /* AppDelegate.h */,
 				0162D92320EE580400D609D1 /* AppDelegate.m */,
@@ -104,6 +112,7 @@
 				01B22C3F20F3400600A691C5 /* tool */,
 				01B8E63820EF0913008D8880 /* New Group */,
 				0162D92620EE581300D609D1 /* main */,
+				0182D5F820F44D570031490C /* pagesView */,
 				0199DB9620EDFE7000C7959B /* MenuScrview */,
 				017CBCF720EC79F200B15269 /* Main.storyboard */,
 				017CBCFA20EC79F600B15269 /* Assets.xcassets */,
@@ -115,6 +124,33 @@
 			);
 			path = pageView;
 			sourceTree = "<group>";
+		};
+		0182D5F820F44D570031490C /* pagesView */ = {
+			isa = PBXGroup;
+			children = (
+				0182D5F920F44D6E0031490C /* PagesView.h */,
+				0182D5FA20F44D6E0031490C /* PagesView.m */,
+			);
+			path = pagesView;
+			sourceTree = "<group>";
+		};
+		0182D5FC20F4625A0031490C /* nav */ = {
+			isa = PBXGroup;
+			children = (
+				0182D5FE20F4627F0031490C /* MyNavgationController.h */,
+				0182D5FF20F4627F0031490C /* MyNavgationController.m */,
+			);
+			name = nav;
+			path = pageView/nav;
+			sourceTree = SOURCE_ROOT;
+		};
+		0182D5FD20F4625A0031490C /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TabBar;
+			path = pageView/TabBar;
+			sourceTree = SOURCE_ROOT;
 		};
 		0199DB9620EDFE7000C7959B /* MenuScrview */ = {
 			isa = PBXGroup;
@@ -294,9 +330,11 @@
 				01B22C4A20F3558E00A691C5 /* NewsModel.m in Sources */,
 				0162D92520EE580500D609D1 /* AppDelegate.m in Sources */,
 				01B22C4E20F3580700A691C5 /* NewsTableViewCell.m in Sources */,
+				0182D5FB20F44D6E0031490C /* PagesView.m in Sources */,
 				01B8E63B20EF0936008D8880 /* childTableView.m in Sources */,
 				01B22C4720F3493300A691C5 /* titlesModel.m in Sources */,
 				01B22C4220F3402900A691C5 /* HttpTool.m in Sources */,
+				0182D60020F4627F0031490C /* MyNavgationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
